@@ -1,12 +1,9 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
+PROJECT TITLE: Insertion
+PURPOSE OF PROJECT: School project
+VERSION or DATE: 12/4/2020
+HOW TO START THIS PROJECT: Open with Greenfoot
+AUTHORS: Only me
+USER INSTRUCTIONS: Try to get back to your helipad for extra $$$
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+Game Link:
+https://github.com/laronichill/Insertion-Game

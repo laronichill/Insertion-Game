@@ -10,7 +10,7 @@ public class Extraction extends Actor
                 if (extractionTime > 0) {
                     extractionTime--;
                 }
-                setImage(new GreenfootImage("TIME LEFT TILL EXTRACTION: \n" + (double) extractionTime/100 + "",30 , Color.WHITE, Color.BLACK, Color.YELLOW));
+                setImage(new GreenfootImage("TIME LEFT TILL EXTRACTION: \n" + (double) extractionTime/100 + "\nGet To Your Helipad",30 , Color.WHITE, Color.BLACK, Color.YELLOW));
             } 
         } else if (extractionTime <= 0) {
             if (getWorld().getObjects(CounterTerrorist.class).size() == 0){
