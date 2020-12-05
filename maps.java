@@ -18,4 +18,13 @@ public class maps extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 360, 1);
     }
+    public void transitionToWorld(maps newLevel)
+    {
+        stopped();
+        Greenfoot.setWorld(newLevel);
+        
+        // Continue playing current music is new world has none
+        
+        newLevel.started();
+    }
 }

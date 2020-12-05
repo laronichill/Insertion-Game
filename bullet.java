@@ -9,6 +9,15 @@ public class bullet extends Players
     public void act() 
     {
         move(5);
+        bulletHit();
+        if(isAtEdge()){
+            World world = getWorld();
+            world.removeObject(this);
+        }
+        
+    }
+    public void bulletHit()
+    {
         Actor CounterTerrorist = getOneIntersectingObject(CounterTerrorist.class);
         if (CounterTerrorist != null && pistolBulletType == 0) {
             World world = getWorld();

@@ -1,9 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.*;
 
 public class CounterTerrorist extends Players
 {
     private int gunReloadTime = 25;
     private int reload = 0;
+    public int money = 500;
+    
     public void act() 
     {
         if (reload < gunReloadTime) {
@@ -27,5 +30,9 @@ public class CounterTerrorist extends Players
             reload = 0;
             Greenfoot.playSound("pistol.wav");
         }
+    }
+    public void giveMoneyEndRound(){
+        money += 500;
+        Greenfoot.setWorld(new BuyMenu());
     }
 }

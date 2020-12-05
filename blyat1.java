@@ -19,19 +19,23 @@ public class blyat1 extends maps
      */
     private void prepare()
     {
-        heli heliCT = new heli();
-        addObject(heliCT,550,50);
-        heli heliT = new heli();
-        addObject(heliT,50,310);
-        CounterTerrorist counterTerrorist = new CounterTerrorist();
-        addObject(counterTerrorist,550,50);
-        Terrorist terrorist = new Terrorist();
-        addObject(terrorist,50,310);
+        heli helipadCT = new heli();
+        addObject(helipadCT,550,50);
+        heli helipadT = new heli();
+        addObject(helipadT,50,310);
         Players player = new Players();
-        addObject(player,0,0);
+        addObject(player, 300, 180);
+        HeliCT heliCT = new HeliCT();
+        addObject(heliCT,600,50);
+        HeliT heliT = new HeliT();
+        addObject(heliT,0,310);
+        Insertion insertion = new Insertion();
+        addObject(insertion,300,180);
+        Extraction extraction = new Extraction();
+        addObject(extraction,300,180);
     }
 
-        public void act()
+    public void act()
     {
         super.act();
         
