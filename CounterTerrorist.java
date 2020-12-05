@@ -3,17 +3,20 @@ import java.util.*;
 
 public class CounterTerrorist extends Players
 {
-    private int gunReloadTime = 25;
+    public static int gunReloadTime = 25;
     private int reload = 0;
-    public int money = 500;
+    public static int money = 500;
+    public static boolean HelipadCTTouching = false;
+    public static int movementSpeed = 2;
     
     public void act() 
     {
+        EndRoundCT();
         if (reload < gunReloadTime) {
             reload++;
         }
-        if (Greenfoot.isKeyDown("w")){ move(2);}
-        if (Greenfoot.isKeyDown("s")){ move(-2);}
+        if (Greenfoot.isKeyDown("w")){ move(movementSpeed);}
+        if (Greenfoot.isKeyDown("s")){ move(-movementSpeed);}
         if (Greenfoot.isKeyDown("a")){ turn(-5);}
         if (Greenfoot.isKeyDown("d")){ turn(5);}
         if (Greenfoot.isKeyDown("space")){ 
@@ -28,11 +31,22 @@ public class CounterTerrorist extends Players
             pistolbullet.pistolBulletType = 1;
             pistolbullet.setRotation(getRotation());
             reload = 0;
-            Greenfoot.playSound("pistol.wav");
+            if (gunReloadTime >= 25) {
+                Greenfoot.playSound("pistol.wav");
+            } else if(gunReloadTime < 25) {
+                Greenfoot.playSound("fal.wav");
+            } else {
+                Greenfoot.playSound("pistol.wav");
+            }
         }
     }
-    public void giveMoneyEndRound(){
-        money += 500;
-        Greenfoot.setWorld(new BuyMenu());
+    public void EndRoundCT(){
+        Actor HelipadT = getOneIntersectingObject(helipadCT.class);
+        if (HelipadT != null){
+            HelipadCTTouching = true;
+        } else{
+            HelipadCTTouching = false;
+        }
+                
     }
 }

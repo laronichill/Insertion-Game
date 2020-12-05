@@ -19,8 +19,8 @@ public class blyat1 extends maps
      */
     private void prepare()
     {
-        heli helipadCT = new heli();
-        addObject(helipadCT,550,50);
+        helipadCT helipadct = new helipadCT();
+        addObject(helipadct,550,50);
         heli helipadT = new heli();
         addObject(helipadT,50,310);
         Players player = new Players();
@@ -35,9 +35,4 @@ public class blyat1 extends maps
         addObject(extraction,300,180);
     }
 
-    public void act()
-    {
-        super.act();
-        
-    }
 }

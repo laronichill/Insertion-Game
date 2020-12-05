@@ -8,14 +8,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartMenu extends maps
 {
-
-    /**
-     * Constructor for objects of class StartMenu.
-     * 
-     */
+    public static GreenfootSound gameMusic;
     public StartMenu()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        CounterTerrorist.money = 500;
+        Terrorist.money = 500;
+        gameMusic =  new  GreenfootSound("mw2_menu.wav");
+        
+        prepare();
+    }
+    public void started(){
+        gameMusic.playLoop();
+    }
+    public void stopped(){
+        gameMusic.stop();
+    }
+    private void prepare()
+    {
+        
+        Help help = new Help();
+        addObject(help,300,150);
+        Start start = new Start();
+        addObject(start,300,150);
+        StartMenuTexts startMenuTexts = new StartMenuTexts();
+        addObject(startMenuTexts,300,150);
+    }
+    public void act()
+    {
+        super.act();
         
     }
 }

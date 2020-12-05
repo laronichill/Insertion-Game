@@ -4,17 +4,20 @@ import java.awt.Color;
 
 public class Terrorist extends Players
 {
-    private int gunReloadTime = 25;
+    public static int gunReloadTime = 25;
     private int reload = 0;
-    public int money = 500;
+    public static int money = 500;
+    public static boolean HelipadTTouching = false;
+    public static int movementSpeed = 2;
     
     public void act() 
     {
+        EndRoundT();
         if (reload < gunReloadTime) {
             reload++;
         }
-        if (Greenfoot.isKeyDown("up")){ move(2);}
-        if (Greenfoot.isKeyDown("down")){ move(-2);}
+        if (Greenfoot.isKeyDown("up")){ move(movementSpeed);}
+        if (Greenfoot.isKeyDown("down")){ move(-movementSpeed);}
         if (Greenfoot.isKeyDown("left")){ turn(-5);}
         if (Greenfoot.isKeyDown("right")){ turn(5);}
         if (Greenfoot.isKeyDown("enter")){ 
@@ -38,8 +41,13 @@ public class Terrorist extends Players
             }
         }  
     }
-    public void giveMoneyEndRound(){
-        money += 500;
-        Greenfoot.setWorld(new BuyMenu());
+    public void EndRoundT(){
+        Actor HelipadT = getOneIntersectingObject(heli.class);
+        if (HelipadT != null){
+            HelipadTTouching = true;
+        } else{
+            HelipadTTouching = false;
+        }
+                
     }
 }

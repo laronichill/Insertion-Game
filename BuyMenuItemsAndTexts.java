@@ -8,12 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BuyMenuItemsAndTexts extends Actor
 {
-    /**
-     * Act - do whatever the BuyMenuItemsAndTexts wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    static int upgradeToAR = 1000;
     public void act() 
     {
-        // Add your action code here.
+        setLocation(300,150);
+        setImage(new GreenfootImage("Restart Game",24 , Color.RED, new Color(0,0,0,0), Color.BLACK));
+        if (Greenfoot.mouseClicked(this)) {
+            Greenfoot.setWorld(new blyat1());
+        }
+        
+        
     }    
 }
