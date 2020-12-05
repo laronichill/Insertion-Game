@@ -11,8 +11,13 @@ public class StartMenu extends maps
     public static GreenfootSound gameMusic;
     public StartMenu()
     {    
+        CounterTerrorist.gunReloadTime = 25;
         CounterTerrorist.money = 500;
+        CounterTerrorist.movementSpeed = 2;
+        Terrorist.gunReloadTime = 25;
         Terrorist.money = 500;
+        Terrorist.movementSpeed = 2;
+        
         gameMusic =  new  GreenfootSound("mw2_menu.wav");
         
         prepare();
